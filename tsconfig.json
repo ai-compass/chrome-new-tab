@@ -22,6 +22,7 @@
     "types": [
       "unplugin-icons/types/vue",
       "chrome",
+      "crypto-js/md5"
     ]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "./auto-imports.d.ts", "./components.d.ts"],

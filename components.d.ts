@@ -10,13 +10,21 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BexTime: typeof import('./src/components/BexTime/index.vue')['default']
+    BlurBg: typeof import('./src/components/BlurBg/index.vue')['default']
     BookMarks: typeof import('./src/components/BookMarks/index.vue')['default']
+    CustomWebsite: typeof import('./src/components/CustomWebsite/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCascader: typeof import('element-plus/es')['ElCascader']
     ElDialog: typeof import('element-plus/es')['ElDialog']
+    ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElInput: typeof import('element-plus/es')['ElInput']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    Hitokoto: typeof import('./src/components/Hitokoto/index.vue')['default']
+    Search: typeof import('./src/components/Search/index.vue')['default']
+    Translate: typeof import('./src/components/Translate/index.vue')['default']
+    WallpaperDrawer: typeof import('./src/components/wallpaperDrawer/index.vue')['default']
+    Weather: typeof import('./src/components/Weather/index.vue')['default']
   }
 }

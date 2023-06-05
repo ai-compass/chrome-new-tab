@@ -8,9 +8,16 @@
     "48": "one-tab.png",
     "128": "one-tab.png"
   },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module",
+    "persistent": false
+  },
+  "host_permissions": ["<all_urls>"],
   "permissions": [
     "bookmarks",
-    "storage"
+    "storage",
+    "nativeMessaging"
   ],
   "chrome_url_overrides": {
     "newtab": "index.html"
