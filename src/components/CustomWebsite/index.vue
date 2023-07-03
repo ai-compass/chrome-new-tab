@@ -131,7 +131,7 @@ function openAddLocalBookmark() {
         class="flex flex-col justify-center items-center text-[#fff] drop-shadow-md cursor-pointer"
       >
         <div class="relative w-[60px] h-[60px] mt4 group">
-          <img class="w-full h-full" :src="w.icon || defaultIcon" alt="">
+          <img class="w-full h-full rounded-full" :src="w.icon || defaultIcon" alt="">
           <div class="group-hover:flex hidden justify-center items-center absolute top-0 left-0 w-full h-full bg-[#fff]/30 backdrop-blur-md">
             <Delete class="w-[30px] h-[30px]" @click.stop.prevent="deleteLocalBookmark(w)" />
           </div>
