@@ -1,6 +1,5 @@
 <script lang='ts' setup>
 import { onMounted, ref, unref, watch } from 'vue'
-import * as dayjs from 'dayjs'
 import { useWeather } from '../../utils/weather'
 import { getWeekday } from './types'
 
@@ -55,8 +54,20 @@ function getWeather(location: string): Promise<Daily[]> {
 //   return new URL(`../../assets/weather/icons/${name}.svg`, import.meta.url).href
 // }
 
+function getCurrentDate() {
+  const today = new Date()
+  const year = today.getFullYear() // 获取年份
+  const month = String(today.getMonth() + 1).padStart(2, '0') // 获取月份（+1是因为月份从0开始，padStart用于补零）
+  const day = String(today.getDate()).padStart(2, '0') // 获取日期（padStart用于补零）
+
+  // 格式化成YYYY-MM-DD
+  const formattedDate = `${year}-${month}-${day}`
+
+  return formattedDate
+}
+
 function getDay(date: string): string {
-  const today = dayjs().format('YYYY-MM-DD')
+  const today = getCurrentDate()
   if (today === date)
     return '今天'
 
