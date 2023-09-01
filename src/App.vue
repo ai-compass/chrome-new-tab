@@ -29,8 +29,10 @@ const bg = ref(img.default)
     <div class="flex max-w-[1400px] h-screen m-auto py-16 font-mono">
       <div class="flex flex-col gap-6 w-[500px]">
         <BexTime />
-        <Weather />
+        <!-- <Weather /> -->
+        <QWeather />
         <Hitokoto />
+        <TimeProgress />
         <Translate />
       </div>
       <div class="flex flex-1 flex-col gap-6 pl-8">
@@ -47,8 +49,5 @@ const bg = ref(img.default)
 <style>
 #app {
   background-size: cover;
-}
-.app-bg1 {
-  background: url(./assets/bg/bg1.png) no-repeat center center;
 }
 </style>

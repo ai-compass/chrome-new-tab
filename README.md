@@ -8,3 +8,9 @@
 - [天气现象表](https://lbs.amap.com/api/webservice/guide/tools/weather-code/)
 - [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin/)
 - [背景壁纸接口](https://github.com/xCss/bing)
+
+运行前需要确认浏览器是否已经安装了对应的插件！！！如果安装了的话，需要卸载后重新添加开发版本！
+
+
+- [和风天气图标](https://icons.qweather.com/usage/)
+- [和风天气 API](https://dev.qweather.com/docs/api/weather/weather-daily-forecast/)
