@@ -4,16 +4,12 @@ import type { FormInstance, FormRules } from 'element-plus'
 import { cloneDeep } from 'lodash-es'
 import { nanoid } from 'nanoid'
 import defaultIcon from '../../assets/default-weather.png'
+import type { IWebsite } from './types'
+import { webList } from './web'
 import Add from '~icons/gala/add'
 import Delete from '~icons/material-symbols/delete-outline'
 
-interface IWebsite {
-  id: string
-  name: string
-  url: string
-  icon: string
-}
-const website = ref<IWebsite[]>([])
+const website = ref<IWebsite[]>(webList)
 const dialogVisible = ref(false)
 const bookmarkFormRef = ref<FormInstance>()
 const rules = reactive<FormRules>({
@@ -132,7 +128,7 @@ function openAddLocalBookmark() {
       >
         <div class="relative w-[60px] h-[60px] mt4 group">
           <img class="w-full h-full rounded-full" :src="w.icon || defaultIcon" alt="">
-          <div class="group-hover:flex hidden justify-center items-center absolute top-0 left-0 w-full h-full bg-[#fff]/30 backdrop-blur-md">
+          <div v-if="!w.default" class="group-hover:flex hidden justify-center items-center absolute top-0 left-0 w-full h-full bg-[#fff]/30 backdrop-blur-md">
             <Delete class="w-[30px] h-[30px]" @click.stop.prevent="deleteLocalBookmark(w)" />
           </div>
         </div>

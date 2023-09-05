@@ -9,19 +9,6 @@ const images = import.meta.glob('./assets/bg/*.png', { eager: true })
 const random = (max: number, min: number) => Math.floor(Math.random() * (max - min + 1) + min)
 const img = images[`./assets/bg/bg${random(1, 9)}.png`] as { default: string }
 const bg = ref(img.default)
-
-// onMounted(() => {
-//   fetch('http://bing.ioliu.cn/v1/rand?type=json&w=1920&h=1080')
-//     .then(res => res.json())
-//     .then((res) => {
-//       const { data, status } = res
-//       if (status.code === 200)
-//         bg.value = data.url || img.default
-//     })
-//     .catch(() => {
-//       bg.value = img.default
-//     })
-// })
 </script>
 
 <template>

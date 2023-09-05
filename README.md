@@ -1,5 +1,6 @@
 
 - [chrome bookmark api](https://developer.chrome.com/docs/extensions/reference/bookmarks/)
+- [icon 安装使用](https://github.com/unplugin/unplugin-icons)
 - [iconify 选择](https://icon-sets.iconify.design/)
 - [教学视频](https://www.youtube.com/watch?v=JyLSNzJfPsI)
 - [高德地图控制台](https://console.amap.com/dev/key/app)
