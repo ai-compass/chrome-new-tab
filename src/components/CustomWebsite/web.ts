@@ -16,4 +16,11 @@ export const webList: IWebsite[] = [
     icon: 'https://github.githubassets.com/pinned-octocat.svg',
     default: true,
   },
+  {
+    id: nanoid(),
+    name: '博客',
+    url: 'https://webb1an.github.io/',
+    icon: 'https://webb1an.github.io/favicon.ico',
+    default: true,
+  },
 ]

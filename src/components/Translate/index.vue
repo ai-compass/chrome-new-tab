@@ -17,8 +17,8 @@ port.onMessage.addListener((msg) => {
 port.postMessage({ message: 'hello from newTab' })
 
 const translate = useDebounceFn(() => {
-  const appId = '20230501001662789'
-  const key = 'jy3UUhE0w8sh2aOERyuI'
+  const appId = import.meta.env.VITE_BAIDU_APP_ID
+  const key = import.meta.env.VITE_BAIDU_APP_KEY
   const salt = (new Date()).getTime()
   const sign = MD5(appId + unref(target) + salt + key).toString()
 

@@ -1,6 +1,6 @@
 <script lang='ts' setup>
 import { onMounted, ref, unref, watch } from 'vue'
-import { useWeather } from '../../utils/weather'
+import { useWeather } from '../../hooks/useWeather'
 import { getWeekday } from './types'
 
 import type { Daily, Location, WeekDay } from './types'
@@ -10,10 +10,10 @@ import LocationFilled from '~icons/carbon/location-filled'
 
 const weather = ref<Daily[]>([])
 
-const { city, getChromeStorageWeather, setChromeStorageLocation } = useWeather()
+const { city, weatherStorageKey, getChromeStorage, setChromeStorageLocation } = useWeather()
 
 onMounted(async () => {
-  const location = await getChromeStorageWeather()
+  const location = await getChromeStorage<string>(weatherStorageKey)
   if (!location)
     await setChromeStorageLocation()
   else
@@ -28,7 +28,8 @@ watch(city, async () => {
 // 根据城市名称获取城市ID
 function getLocation(city: string): Promise<Location> {
   return new Promise((resolve) => {
-    fetch(`https://geoapi.qweather.com/v2/city/lookup?location=${city}&key=d70573df2a8c41dc8ce8cfcbf11102b2`)
+    const key = import.meta.env.VITE_WEATHER_KEY
+    fetch(`https://geoapi.qweather.com/v2/city/lookup?location=${city}&key=${key}`)
       .then(res => res.json())
       .then((res) => {
         if (res.location && res.location.length > 0)
@@ -49,10 +50,6 @@ function getWeather(location: string): Promise<Daily[]> {
       })
   })
 }
-
-// function getIcon(name: string) {
-//   return new URL(`../../assets/weather/icons/${name}.svg`, import.meta.url).href
-// }
 
 function getCurrentDate() {
   const today = new Date()

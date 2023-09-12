@@ -156,8 +156,6 @@ function setChromeStorageBookmark(bookmarks: string) {
   })
 }
 
-// chrome.storage.local.remove(bookmarkStorageKey)
-
 async function confirmAddBookmark(formEl: FormInstance | undefined) {
   if (!formEl)
     return

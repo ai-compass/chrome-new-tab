@@ -1,3 +1,6 @@
+项目中集成了百度翻译和和风天气的 API，需要申请对应的 key 才能使用。
+
+项目中用到 `Tailwind` 需要启用 `Tailwind CSS IntelliSense` 插件才会在写相关样式时有提示。
 
 - [chrome bookmark api](https://developer.chrome.com/docs/extensions/reference/bookmarks/)
 - [icon 安装使用](https://github.com/unplugin/unplugin-icons)
@@ -15,3 +18,4 @@
 
 - [和风天气图标](https://icons.qweather.com/usage/)
 - [和风天气 API](https://dev.qweather.com/docs/api/weather/weather-daily-forecast/)
+

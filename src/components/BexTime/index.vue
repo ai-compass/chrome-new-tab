@@ -16,7 +16,6 @@ setInterval(() => {
 
 <template>
   <div class="text-6xl text-[#fff] drop-shadow-md">
-    <!-- <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"> -->
     <div class="">
       {{ time }}
     </div>

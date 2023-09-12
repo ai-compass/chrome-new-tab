@@ -1,22 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useBackground } from './hooks/useBackground'
 import SwitchImage from '~icons/majesticons/image'
 
-const drawer = ref(false)
-
-// 引入文件下所有图片
-const images = import.meta.glob('./assets/bg/*.png', { eager: true })
-const random = (max: number, min: number) => Math.floor(Math.random() * (max - min + 1) + min)
-const img = images[`./assets/bg/bg${random(1, 9)}.png`] as { default: string }
-const bg = ref(img.default)
+const { bg, wallpaper, content, switchWrapper } = useBackground()
 </script>
 
 <template>
-  <div class="app-container" :style="{ background: `url(${bg}) no-repeat 100%/cover` }">
+  <div class="app-container" :style="{ backgroundImage: `url(${bg})`, backgroundSize: `${wallpaper === 'fy' ? 'unset' : 'cover'}` }">
     <div class="flex max-w-[1400px] h-screen m-auto py-16 font-mono">
       <div class="flex flex-col gap-6 w-[500px]">
         <BexTime />
-        <!-- <Weather /> -->
         <QWeather />
         <Hitokoto />
         <TimeProgress />
@@ -29,12 +22,20 @@ const bg = ref(img.default)
     </div>
   </div>
 
-  <SwitchImage class="fixed top-4 right-4 text-[#fff] cursor-pointer" @click="drawer = false" />
-  <wallpaper-drawer v-model:drawer="drawer" />
+  <el-tooltip effect="dark" :content="content" placement="bottom">
+    <SwitchImage class="fixed top-4 right-4 text-[#fff] cursor-pointer" @click="switchWrapper" />
+  </el-tooltip>
 </template>
 
 <style>
 #app {
   background-size: cover;
+}
+.app-container {
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.5s;
 }
 </style>
